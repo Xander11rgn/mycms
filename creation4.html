@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="css/flexslider.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Roboto:ital@0;1&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> -->
+    <title>MyCMS - Создать сайт</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="fpcontainer">
+            <div class="title">MyCMS</div>
+            <div class="panel panelname">
+                <div class="panel__welcome hide">
+                    Добро пожаловать в конструктор интернет-магазинов!<br>
+                    Выполните первичную инициализацию сайта,
+                    следуя дальнейшим шагам.
+                </div>
+                <div class="panel__steptext firststep">
+                    Итак, шаг 1 из 6: выберите название для Вашего интернет-магазина:
+                </div>
+                <div class="panel__input">
+                    <div class="input__text">
+                        <input type="text" name="name" id="name" class="linput">
+                    </div>
+                </div>
+                <div class="button next">Далее</div>
+            </div>
+
+            <div class="panel paneldesign hide">
+                <div class="panel__steptext">
+                    Шаг 2 из 6: выберите шаблон дизайна для сайта:
+                </div>
+                <div class="panel__designs">
+                    <div class="panel__design panel__design-selected">
+                        <img src="img/preview.jpg" alt="">
+                    </div>
+                    <div class="panel__design">
+                        <img src="img/desert.png" alt="">
+                    </div>
+                    <div class="panel__design">
+                        <img src="img/desert.png" alt="">
+                    </div>
+                    <div class="panel__design">
+                        <img src="img/desert.png" alt="">
+                    </div>
+                    <div class="panel__design">
+                        <img src="img/desert.png" alt="">
+                    </div>
+                    <div class="panel__design">
+                        <img src="img/desert.png" alt="">
+                    </div>
+                </div>
+                <div class="panel__buttons">
+                    <div class="button prev">Назад</div>
+                    <div class="button next">Далее</div>
+                </div>
+            </div>
+
+
+            <div class="panel panelpayment hide">
+                <div class="panel__steptext">
+                    Шаг 3 из 6: укажите способы оплаты, актуальные для Вашего магазина:
+                </div>
+
+                <div class="panel__payments">
+                    <div class="payments__payment">
+                        <div class="payment__label">Способ №1</div>
+                        <div class="payment__text">
+                            <input type="text" name="payment0" id="payment0" class="rinput">
+                        </div>
+                        <div class="payment__plusminus">
+                            <img src="img/plus.svg" alt="" class="plus" title="Добавить ещё">
+                            <img src="img/minus.svg" alt="" class="minus hide" title="Убрать">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel__buttons">
+                    <div class="button prev">Назад</div>
+                    <div class="button next">Далее</div>
+                </div>
+            </div>
+
+            <div class="panel paneldelivery">
+                <div class="panel__steptext">
+                    Шаг 4 из 6: укажите способы доставки, актуальные для Вашего магазина:
+                </div>
+
+                <div class="panel__payments">
+                    <div class="payments__payment">
+                        <div class="payment__label">Способ №1</div>
+                        <div class="payment__text">
+                            <input type="text" name="delivery0" id="delivery0" class="rinput">
+                        </div>
+                        <div class="payment__plusminus">
+                            <img src="img/plus.svg" alt="" class="plus" title="Добавить ещё">
+                            <img src="img/minus.svg" alt="" class="minus hide" title="Убрать">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel__buttons">
+                    <div class="button prev">Назад</div>
+                    <a href="/creation5.html" class="button next">Далее</a>
+                </div>
+            </div>
+
+            <div class="panel panelphone hide">
+                <div class="panel__steptext">
+                    Шаг 5 из 6: укажите контактный номер телефона:
+                </div>
+
+                <input type="text" name="contactPhone" id="contactPhone" class="linput">
+
+                <div class="panel__buttons">
+                    <div class="button prev">Назад</div>
+                    <div class="button next">Далее</div>
+                </div>
+            </div>
+
+            <div class="panel panelmail hide">
+                <div class="panel__steptext">
+                    Шаг 6 из 6: укажите контактный адрес электронной почты:
+                </div>
+
+                <input type="email" name="contactMail" id="contactMail" class="linput">
+
+                <div class="panel__buttons">
+                    <div class="button prev">Назад</div>
+                    <a href="electro/index.html" class="button next">СОЗДАТЬ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
