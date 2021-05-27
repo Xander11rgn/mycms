@@ -4,7 +4,7 @@ class Check {
       const selectionIndex = input.selectionStart - 1;
       const str = input.value;
       const lastChar = str[selectionIndex];
-      const pattern = /^[а-яА-Я|a-zA-Z|\s|-]/;
+      const pattern = /^[а-яА-Я|a-zA-Z|-]/;
       if (!lastChar.match(pattern)) {
         input.value = str.replace(lastChar, "");
         input.selectionStart = selectionIndex;
@@ -13,16 +13,54 @@ class Check {
     } catch {}
   }
 
-  static checkEmail(input, error) {
+  static checkEmail(input) {
     const mailText = input.value;
     const template = /.+@.+\..+/i;
-    if (!mailText.match(template) && mailText != "") {
-      alert("Введённый почтовый адрес некорректный!");
-      // Error.activateError(error);
+    if (!mailText.match(template)) {
+      input.nextElementSibling.classList.remove("vh");
+      console.log('input.nextElementSibling: ', input.nextElementSibling);
+      //alert("Введённый почтовый адрес некорректен!");
+    } else {
+      input.nextElementSibling.classList.add("vh");
     }
-    // } else {
-    //   Error.deactivateError(error);
-    // }
+  }
+
+  static checkSpace(input) {
+    const inputText = input.value;
+    const template = /\s/g;
+    input.value = inputText.replace(template,"");
+  }
+
+  static checkEmpty(input) {
+    if (input.value.replace(/\s/gi, "") == "") {
+      input.nextElementSibling.classList.remove("vh");
+    } else {
+      input.nextElementSibling.classList.add("vh");
+    }
+  }
+
+  static checkPhone(input, mask) {
+    const selectionStart = input.selectionStart;
+    const selectionEnd = input.selectionEnd;
+
+    if (
+      (selectionStart <= 5 || selectionEnd <= 5) &&
+      !(selectionStart == 5 && selectionEnd > 5)
+    ) {
+      input.selectionStart = input.value.length;
+      input.selectionEnd = input.value.length;
+    }
+
+    let str = input.value;
+    const lastChar = str[str.length - 1];
+    str = str.slice(0, str.length - 1);
+
+    if (str == "+7 (") {
+      if (lastChar != "9") {
+        input.value = "+7 (";
+        mask.updateValue();
+      }
+    }
   }
 
   // static checkNumber(input) {
@@ -128,29 +166,7 @@ class Check {
   //   }
   // }
 
-  static checkPhone(input, mask) {
-    const selectionStart = input.selectionStart;
-    const selectionEnd = input.selectionEnd;
-
-    if (
-      (selectionStart <= 5 || selectionEnd <= 5) &&
-      !(selectionStart == 5 && selectionEnd > 5)
-    ) {
-      input.selectionStart = input.value.length;
-      input.selectionEnd = input.value.length;
-    }
-
-    let str = input.value;
-    const lastChar = str[str.length - 1];
-    str = str.slice(0, str.length - 1);
-
-    if (str == "+7 (") {
-      if (lastChar != "9") {
-        input.value = "+7 (";
-        mask.updateValue();
-      }
-    }
-  }
+  
 
   
 }
