@@ -7,7 +7,11 @@ $lastName = $_POST["lastName"];
 $firstName = $_POST["firstName"];
 $middleName = $_POST["middleName"];
 $mail = $_POST["mail"];
-$phone = $_POST["phone"];
+if (strlen($_POST["phone"]) != 18) {
+  $phone = NULL;
+} else {
+  $phone = $_POST["phone"];
+}
 $groupID = intval($_POST["groupID"]);
 
 
